@@ -11,7 +11,7 @@ import com.example.jukkabookstore.domain.BookRepository;
 // moi muutos
 
 
-@SpringBootApplication(scanBasePackages = {"web", "model"})
+@SpringBootApplication
 public class JukkabookstoreApplication {
 
 	public static void main(String[] args) {
