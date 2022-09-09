@@ -8,9 +8,6 @@ import org.springframework.context.annotation.Bean;
 import com.example.jukkabookstore.domain.Book;
 import com.example.jukkabookstore.domain.BookRepository;
 
-// moi muutos
-
-
 @SpringBootApplication
 public class JukkabookstoreApplication {
 
@@ -21,9 +18,15 @@ public class JukkabookstoreApplication {
 	@Bean
 	public CommandLineRunner demo(BookRepository repository) {
 		return (args) -> {
-			Book s = new Book("Tommin koodausVinkit420", "Tommi K Karppanen", 2022, "AAA-6969", 69.69);
+			Book book = new Book("Tommin koodausVinkit420", "Tommi K Karppanen", 2022, "AAA-6969", 69.69);
+			Book book2 = new Book("Tommin koodausVinkit420", "Tommi K Karppanen", 2022, "AAA-6969", 69.69);
+			Book book3 = new Book("Tommin koodausVinkit420", "Tommi K Karppanen", 2022, "AAA-6969", 69.69);
+			Book book4 = new Book("Tommin koodausVinkit420", "Tommi K Karppanen", 2022, "AAA-6969", 69.69);
 			
-			repository.save(s);
+			repository.save(book);
+			repository.save(book2);
+			repository.save(book3);
+			repository.save(book4);
 		};
 	}
 

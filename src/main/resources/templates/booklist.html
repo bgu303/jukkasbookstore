@@ -1,18 +1,35 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-   <head>
-      <meta charset = "ISO-8859-1" />
-      <link href = "css/styles.css" rel = "stylesheet"/>
-      <title>Spring Boot Application</title>
-   </head>
-   <body>
-      <p>Books</p>
-      <table>
-      	<tbody>
-      		<tr th:each="book : ${books}">
-      		<td th:text="${book.title}"></td>
-      		</tr>
-      	</tbody>
-      </table>
-   </body>
+<head>
+<meta charset="ISO-8859-1" />
+<link href="css/styles.css" rel="stylesheet" />
+<title>Spring Boot Application</title>
+</head>
+<body>
+	<p>Books</p>
+	<table>
+		<thead>
+			<tr>
+				<th>Title</th>
+				<th>Author</th>
+				<th>Publish year</th>
+				<th>ISBN</th>
+				<th>Price</th>
+				<th>Delete</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="book : ${books}">
+				<td th:text="${book.title}"></td>
+				<td th:text="${book.author}"></td>
+				<td th:text="${book.publishYear}"></td>
+				<td th:text="${book.isbn}"></td>
+				<td th:text="${book.price}"></td>
+				<td><a th:href="@{/delete/{id}(id=${book.id})}">Delete</a></td>
+			</tr>
+
+		</tbody>
+	</table>
+	<a href="/addbook">Add book</a>
+</body>
 </html>
