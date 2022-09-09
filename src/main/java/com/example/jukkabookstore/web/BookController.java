@@ -55,7 +55,4 @@ public class BookController {
 		model.addAttribute("book", repository.findById(id));
 		return "editbook";
 	}
-	
-	
-
 }
