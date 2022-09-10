@@ -1,0 +1,3 @@
+function DeleteFunction() {
+	confirm("delete?")
+}

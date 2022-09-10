@@ -3,11 +3,13 @@
 <head>
 <meta charset="ISO-8859-1" />
 <link href="css/styles.css" rel="stylesheet" />
+<link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" />
+<script type="text/javascript" th:src="@{/scripts.js}" /></script>
 <title>Spring Boot Application</title>
 </head>
 <body>
 	<p>Books</p>
-	<table>
+	<table class="table table-striped">
 		<thead>
 			<tr>
 				<th>Title</th>
@@ -26,12 +28,12 @@
 				<td th:text="${book.publishYear}"></td>
 				<td th:text="${book.isbn}"></td>
 				<td th:text="${book.price}"></td>
-				<td><a th:href="@{/delete/{id}(id=${book.id})}">Delete</a></td>
+				<td><a onclick="DeleteFunction()" th:href="@{/delete/{id}(id=${book.id})}" class="btn btn-danger">Delete</a></td>
 				<td><a th:href="@{/editbook/{id}(id=${book.id})}">Edit</a></td>
 			</tr>
 
 		</tbody>
 	</table>
-	<a href="/addbook">Add book</a>
+	<a href="/addbook" class="btn btn-success">Add book</a>
 </body>
 </html>
