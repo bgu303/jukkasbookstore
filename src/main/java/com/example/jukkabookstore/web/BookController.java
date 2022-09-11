@@ -13,12 +13,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.example.jukkabookstore.domain.Book;
 import com.example.jukkabookstore.domain.BookRepository;
+import com.example.jukkabookstore.domain.CategoryRepository;
 
 @Controller
 public class BookController {
 
 	@Autowired
 	private BookRepository repository;
+	
+	@Autowired
+	private CategoryRepository categoryRepository;
 
 	@GetMapping("/booklist")
 	public String bookList(Model model) {
@@ -27,7 +31,7 @@ public class BookController {
 	}
 	
 	@PostMapping("/booklist")
-	public String postBookList(Book book, Model model) {
+	public String postBookList(Book book) {
 		repository.save(book);
 		return "redirect:booklist";
 	}
@@ -35,6 +39,7 @@ public class BookController {
 	@GetMapping("/addbook")
 	public String addBook(Model model) {
 		model.addAttribute("book", new Book());
+		model.addAttribute("categories", categoryRepository.findAll());
 		return "addbook";
 	}
 
