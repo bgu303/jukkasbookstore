@@ -29,12 +29,6 @@ public class BookController {
 		model.addAttribute("books", repository.findAll());
 		return "booklist";
 	}
-	
-	@PostMapping("/booklist")
-	public String postBookList(Book book) {
-		repository.save(book);
-		return "redirect:booklist";
-	}
 
 	@GetMapping("/addbook")
 	public String addBook(Model model) {
@@ -44,7 +38,7 @@ public class BookController {
 	}
 
 	@PostMapping("/addbook")
-	public String save(Book book, Model model) {
+	public String save(Book book) {
 		repository.save(book);
 		return "redirect:booklist";
 	}
@@ -59,5 +53,11 @@ public class BookController {
 	public String editBook(@PathVariable("id") Long id, Model model) {
 		model.addAttribute("book", repository.findById(id));
 		return "editbook";
+	}
+	
+	@PostMapping("/editbook")
+	public String postBookList(Book book) {
+		repository.save(book);
+		return "redirect:booklist";
 	}
 }

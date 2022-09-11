@@ -27,9 +27,9 @@ public class JukkabookstoreApplication {
 			categoryRepository.save(category2);
 			categoryRepository.save(category3);
 			Book book = new Book("Tommin koodausVinkit420", "Tommi K Karppanen", 2022, "AAA-6969", 69.69, category1);
-			Book book2 = new Book("Tommin koodausVinkit420", "Tommi K Karppanen", 2022, "AAA-6969", 69.69, category1);
+			Book book2 = new Book("Tommin koodausVinkit420", "Tommi K Karppanen", 2022, "AAA-6969", 69.69, category2);
 			Book book3 = new Book("Tommin koodausVinkit420", "Tommi K Karppanen", 2022, "AAA-6969", 69.69, category1);
-			Book book4 = new Book("Tommin koodausVinkit420", "Tommi K Karppanen", 2022, "AAA-6969", 69.69, category1);
+			Book book4 = new Book("Tommin koodausVinkit420", "Tommi K Karppanen", 2022, "AAA-6969", 69.69, category3);
 			
 	
 			repository.save(book);
