@@ -55,9 +55,4 @@ public class BookController {
 		return "editbook";
 	}
 	
-	@PostMapping("/editbook")
-	public String postBookList(Book book) {
-		repository.save(book);
-		return "redirect:booklist";
-	}
 }

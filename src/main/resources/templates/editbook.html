@@ -6,7 +6,7 @@
 <title>Spring Boot Application</title>
 </head>
 <body>
-	<form th:object="${book}" th:action="@{../editbook}" action="#" method="post">
+	<form th:object="${book}" th:action="@{../addbook}" action="#" method="post">
 		<input type="hidden" th:field="*{id}" class="form-control"/>
 		
 		<label for="title">Title</label>
