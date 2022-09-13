@@ -25,7 +25,7 @@
 	<input type="number" id="price" th:field="*{price}" />
 	
 	<label for="categorylist">Category</label>
-	<select id="categorylist" th:field="*{category}" class="form-control"> <option th:each="category: ${categories}" th:value="${category.name}"
+	<select id="categorylist" th:field="*{category}" class=""> <option th:each="category: ${categories}" th:value="${category.name}"
  	th:text="${category.name}"></option>
 	</select>
 
