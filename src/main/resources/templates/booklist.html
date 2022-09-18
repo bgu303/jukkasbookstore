@@ -30,8 +30,10 @@
 				<td th:text="${book.isbn}"></td>
 				<td th:text="${book.price}"></td>
 				<td th:text="${book.category}"></td>
-				<td><a onclick="DeleteFunction()" th:href="@{/delete/{id}(id=${book.id})}" class="btn btn-danger">Delete</a></td>
+				<!-- th:href="@{/delete/{id}(id=${book.id})}" -->
+				<td><a th:attr="onclick=|DeleteFunction(${book.id})|" class="btn btn-danger">Delete</a></td>
 				<td><a th:href="@{/editbook/{id}(id=${book.id})}">Edit</a></td>
+				
 			</tr>
 
 		</tbody>
