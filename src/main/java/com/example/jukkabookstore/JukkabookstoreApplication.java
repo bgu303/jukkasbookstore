@@ -10,6 +10,8 @@ import com.example.jukkabookstore.domain.BookRepository;
 import com.example.jukkabookstore.domain.Category;
 import com.example.jukkabookstore.domain.CategoryRepository;
 
+// test shit
+
 @SpringBootApplication
 public class JukkabookstoreApplication {
 
