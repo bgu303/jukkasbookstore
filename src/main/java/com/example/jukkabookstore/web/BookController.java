@@ -1,5 +1,6 @@
 package com.example.jukkabookstore.web;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,10 +11,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.jukkabookstore.domain.Book;
 import com.example.jukkabookstore.domain.BookRepository;
 import com.example.jukkabookstore.domain.CategoryRepository;
+
 
 @Controller
 public class BookController {
@@ -55,5 +58,11 @@ public class BookController {
 		model.addAttribute("book", repository.findById(id));
 		return "editbook";
 	}
+	
+	
+    @GetMapping(value="/booklistrest")
+    public @ResponseBody List<Book> bookListRest() {	
+        return (List<Book>) repository.findAll();
+    }    
 	
 }
