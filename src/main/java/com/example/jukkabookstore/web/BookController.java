@@ -63,6 +63,11 @@ public class BookController {
     @GetMapping(value="/booklistrest")
     public @ResponseBody List<Book> bookListRest() {	
         return (List<Book>) repository.findAll();
-    }    
+    }
+    
+    @GetMapping("/booklistrest/{id}")
+    public @ResponseBody Book findBookRest(@PathVariable("id") Long id) {
+    	return repository.findById(id).get();
+    }
 	
 }
