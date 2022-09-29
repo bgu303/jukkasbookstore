@@ -17,13 +17,12 @@ import com.example.jukkabookstore.domain.Book;
 import com.example.jukkabookstore.domain.BookRepository;
 import com.example.jukkabookstore.domain.CategoryRepository;
 
-
 @Controller
 public class BookController {
 
 	@Autowired
 	private BookRepository repository;
-	
+
 	@Autowired
 	private CategoryRepository categoryRepository;
 
@@ -51,23 +50,22 @@ public class BookController {
 		repository.deleteById(id);
 		return "redirect:../booklist";
 	}
-	
+
 	@GetMapping("/editbook/{id}")
 	public String editBook(@PathVariable("id") Long id, Model model) {
 		model.addAttribute("categories", categoryRepository.findAll());
 		model.addAttribute("book", repository.findById(id));
 		return "editbook";
 	}
-	
-	
-    @GetMapping(value="/booklistrest")
-    public @ResponseBody List<Book> bookListRest() {	
-        return (List<Book>) repository.findAll();
-    }
-    
-    @GetMapping("/booklistrest/{id}")
-    public @ResponseBody Book findBookRest(@PathVariable("id") Long id) {
-    	return repository.findById(id).get();
-    }
-	
+
+	@GetMapping(value = "/booklistrest")
+	public @ResponseBody List<Book> bookListRest() {
+		return (List<Book>) repository.findAll();
+	}
+
+	@GetMapping("/booklistrest/{id}")
+	public @ResponseBody Book findBookRest(@PathVariable("id") Long id) {
+		return repository.findById(id).get();
+	}
+
 }
