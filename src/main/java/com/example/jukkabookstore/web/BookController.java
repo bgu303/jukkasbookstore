@@ -1,5 +1,6 @@
 package com.example.jukkabookstore.web;
 
+import java.lang.ProcessBuilder.Redirect;
 import java.util.List;
 import java.util.Optional;
 
@@ -66,6 +67,16 @@ public class BookController {
 	@GetMapping("/booklistrest/{id}")
 	public @ResponseBody Book findBookRest(@PathVariable("id") Long id) {
 		return repository.findById(id).get();
+	}
+	
+	@GetMapping("/login")
+	public String loginPage() {
+		return "login";
+	}
+	
+	@PostMapping("/login")
+	public String loginPost() {
+		return "login";
 	}
 
 }

@@ -36,8 +36,6 @@ public class JukkabookstoreApplication {
 			repository.save(book2);
 			repository.save(book3);
 			repository.save(book4);
-			System.out.println(book4.getCategory());
-
 		};
 	}
 
