@@ -26,6 +26,11 @@ public class BookController {
 
 	@Autowired
 	private CategoryRepository categoryRepository;
+	
+	@PostMapping("/login")
+	public String loginPage() {
+		return "login";
+	}
 
 	@GetMapping("/booklist")
 	public String bookList(Model model) {
@@ -70,12 +75,7 @@ public class BookController {
 	}
 	
 	@GetMapping("/login")
-	public String loginPage() {
-		return "login";
-	}
-	
-	@PostMapping("/login")
-	public String loginPost() {
+	public String getLogin() {
 		return "login";
 	}
 
